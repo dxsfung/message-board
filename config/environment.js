@@ -22,6 +22,7 @@ module.exports = function(environment) {
       authDomain: "question-and-answer-msg-board.firebaseapp.com",
       databaseURL: "https://question-and-answer-msg-board.firebaseio.com",
       storageBucket: "question-and-answer-msg-board.appspot.com",
+      messagingSenderId: "57623376680"
     },
 
     APP: {

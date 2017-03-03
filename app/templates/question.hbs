@@ -1,0 +1,14 @@
+<h2>Details</<h2>
+
+  <h3>More information about
+    <p class="author-highlight">{{model.author}}'s Question:</p>
+    <p class="question-highlight">{{model.content}}:</p>
+  </h3>
+
+  <h3> Answers </h3>
+<ul>
+  {{#each model.answers as |answer|}}
+    {{answer.author}} : <strong>{{answer.content}}</strong> <br>
+  {{/each}}
+</ul>
+{{new-answer saveAnswer="saveAnswer" question=model}}
