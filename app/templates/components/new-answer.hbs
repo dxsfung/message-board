@@ -1,19 +1,20 @@
+<!-- Handles New Answer; called by [question] -->
+
 {{#if addNewAnswer}}
-<h3>New Answer</h3>
+  <h3>New Answer</h3>
   <div>
     <form>
       <div class="form-group">
-        <label for="author">Author</label>
-        {{input value=author id="author"}}
+        <label for="author">Author</label> {{input value=author id="author"}}
       </div>
       <div class="form-group">
-        <label for="content">Answer</label>
-        {{input value=content id="content"}}
+        <label for="content">Answer</label> {{input value=content id="content"}}
       </div>
       <button {{action 'saveAnswer'}}>Save</button>
-        {{#link-to 'question'}}<button type="button" {{action 'answerFormHide'}}>Cancel</button> {{/link-to}}
+      {{#link-to 'question'}}<button type="button" {{action 'answerFormHide'}}>Cancel</button> {{/link-to}}
     </form>
   </div>
 {{else}}
-  <button {{action 'answerFormShow'}}>Add New Answer(s)</button>
+  <button {{action 'answerFormShow'}}>Add New Answer</button>
+  {{#link-to 'index'}} <button class="float-right" type="button">Home</button> {{/link-to}}
 {{/if}}

@@ -4,8 +4,13 @@
   background-color: pink;
 }
 .author-highlight{
-  color: red;
+  color: grey;
+  font-size: 20px;
 }
 .question-highlight{
   color: blue;
+  font-size: 20px;
+}
+.float-right{
+  float: right;
 }

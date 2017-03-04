@@ -1,27 +1,19 @@
 <h1>Questions and Answers</h1>
 
-<h3>Questions</h3>
-
+<h3>Click on the queston for details</h3>
+<br>
 <ol>
   {{#each model.questions as |question|}}
     <li>
       {{#link-to 'question' question.id}}
         {{question.content}}
       {{/link-to}} <br>
-      Asked by: {{question.author}}
-
-      <br> Additional Notes: {{question.notes}}
+    <strong>  Asked by: </strong> {{question.author}} <br>
+    <strong> Additional Notes: </strong> {{question.notes}}
     </li>
     <br>
   {{/each}}
 </ol>
+
+<!-- call new-question to handle adding new question -->
 {{new-question saveQuestion2="saveQuestion3"}}
-
-<!-- <h3>Answers</h3>
-
-<ul>
-  {{#each model.answers as |answer|}}
-    <li> {{answer.content}} provided by {{answer.author}}</li>
-    <br>
-  {{/each}}
-</ul> -->

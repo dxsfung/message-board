@@ -1,16 +1,25 @@
-<h2>Details</<h2>
+  <h3>Spcific Question and Answer </h3>
+    <p class="author-highlight"> <br>
+      Author: <strong>{{model.author}}</strong></p>
+    <p class="question-highlight"> Question: <strong> {{model.content}} </strong></p>
 
-  <h3>More information about
-    <p class="author-highlight">{{model.author}}'s Question:</p>
-    <p class="question-highlight">{{model.content}}:</p>
-  </h3>
   {{update-question question=model update="update"}}
 
-<h3> Answers </h3>
-<ul>
+<br>
+<h4> Answers </h4>
+<ol>
   {{#each model.answers as |answer|}}
-    {{answer.author}} : <strong>{{answer.content}}</strong> <br>
-  {{/each}}
-</ul>
+    <li>
+    Author: <strong>{{answer.author}}</strong>
+    <br>
+    Answer: <strong>{{answer.content}}</strong>
 
+   <!-- call update-answer to edit on the Answer -->
+    {{update-answer updateAnswer="updateAnswer" answer=answer}}
+    <br>
+    </li>
+  {{/each}}
+</ol>
+
+<!-- call new-answer to allow adding answer -->
 {{new-answer saveAnswer="saveAnswer" question=model}}

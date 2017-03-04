@@ -7,6 +7,15 @@ export default Ember.Route.extend({
       },
 
       actions: {
+        updateAnswer(answer, params) {
+          Object.keys(params).forEach(function(key) {
+            if(params[key]!==undefined) {
+              answer.set(key,params[key]);
+            }
+          });
+          answer.save();
+          this.transitionTo('question');
+        },
         update(question, params) {
           Object.keys(params).forEach(function(key) {
             if(params[key]!==undefined) {
@@ -14,7 +23,7 @@ export default Ember.Route.extend({
             }
           });
           question.save();
-          this.transitionTo('index');
+          this.transitionTo('question');
         },
               saveAnswer(params) {
                 var newAnswer = this.store.createRecord('answer', params);
